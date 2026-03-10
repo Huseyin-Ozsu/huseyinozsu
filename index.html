@@ -1,83 +1,270 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hüseyin Özsu | Kişisel Web Sitesi</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background: white;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-      background: #ecf0f1;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hüseyin Özsu | Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+--bg:#f5f5f7;
+--text:#1d1d1f;
+--card:#ffffff;
+--accent:#0071e3;
+}
+
+body.dark{
+--bg:#121212;
+--text:#eaeaea;
+--card:#1e1e1e;
+}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
+
+header{
+text-align:center;
+padding:60px 20px;
+}
+
+.profile{
+width:140px;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+h1{
+margin:10px 0;
+font-size:34px;
+}
+
+.subtitle{
+opacity:0.7;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+section{
+margin:50px 0;
+}
+
+h2{
+border-bottom:2px solid var(--accent);
+padding-bottom:6px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+a{
+text-decoration:none;
+color:var(--accent);
+}
+
+.social{
+margin-top:15px;
+}
+
+.social a{
+font-size:22px;
+margin:0 10px;
+color:var(--text);
+}
+
+.button{
+display:inline-block;
+background:var(--accent);
+color:white;
+padding:10px 18px;
+border-radius:8px;
+margin-top:10px;
+}
+
+.controls{
+position:fixed;
+top:15px;
+right:20px;
+}
+
+.controls button{
+margin-left:10px;
+padding:6px 10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:0.7;
+}
+
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Hüseyin Özsu</h1>
-    <p>Marmara Üniversitesi | Mekatronik Mühendisliği </p>
-  </header>
-  
-  <main>
-    <section>
-      <h2>Hakkımda</h2>
-      <p>Merhaba, ben Hüseyin Özsu. Mühendislik öğrencisiyim. Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışıyorum. Bu sayfada sertifikalarımı bulabilirsiniz.</p>
-    </section>
 
-    <section>
-      <h2>Sertifikalar</h2>
-     <ul>
-  <li><a href="/sertifikalar/bilgi_guvenligi.pdf" target="_blank">Bilgi Güvenliği Farkındalığı Eğitimi</a></li>
-  <li><a href="/sertifikalar/isg.pdf" target="_blank">İş Sağlığı ve Güvenliği Eğitimi</a></li>
-    </ul>
-      
-    </section>
+<div class="controls">
+<button onclick="toggleDark()">🌙</button>
+<button onclick="setLang('tr')">TR</button>
+<button onclick="setLang('en')">EN</button>
+</div>
+
+<header>
+
+<img src="profil.jpg" class="profile">
+
+<h1>Hüseyin Özsu</h1>
+
+<p class="subtitle" data-tr="Marmara Üniversitesi | Mekatronik Mühendisliği"
+data-en="Marmara University | Mechatronics Engineering">
+Marmara Üniversitesi | Mekatronik Mühendisliği
+</p>
+
+<div class="social">
+
+<a href="https://github.com/" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://linkedin.com/in/huseyin-ozsu/" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="mailto:h.ozsuhuseyin@gmail.com">
+<i class="fa fa-envelope"></i>
+</a>
+
+</div>
+
+<a href="cv.pdf" class="button" download data-tr="CV İndir" data-en="Download CV">CV İndir</a>
+
+</header>
+
+<div class="container">
+
+<section>
+
+<h2 data-tr="Hakkımda" data-en="About Me">Hakkımda</h2>
+
+<p data-tr="Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan bir mühendislik öğrencisiyim."
+data-en="Engineering student working on autonomous systems, control theory and software development.">
+
+Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan bir mühendislik öğrencisiyim.
+
+</p>
+
+</section>
 
 
-    <section>
-      <h2>İletişim</h2>
-      <p>E-posta: h.ozsuhuseyin@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/huseyin-ozsu/" target="_blank">linkedin.com/in/huseyinozsu</a></p>
-    </section>
-  </main>
+<section>
 
-  <footer>
-    &copy; 2025 Hüseyin Özsu. Tüm hakları saklıdır.
-  </footer>
+<h2 data-tr="Projeler" data-en="Projects">Projeler</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Otonom Araç Simülasyonu</h3>
+<p>ROS tabanlı otonom sürüş projesi.</p>
+<a href="#">GitHub</a>
+</div>
+
+<div class="card">
+<h3>PID Kontrol Sistemi</h3>
+<p>Matlab ile kontrol sistemi tasarımı.</p>
+<a href="#">GitHub</a>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Bilgi Güvenliği</h3>
+
+<embed src="sertifikalar/bilgi_guvenligi.pdf"
+type="application/pdf"
+width="100%"
+height="200px">
+
+</div>
+
+<div class="card">
+<h3>İş Sağlığı ve Güvenliği</h3>
+
+<embed src="sertifikalar/isg.pdf"
+type="application/pdf"
+width="100%"
+height="200px">
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+
+© 2025 Hüseyin Özsu
+
+</footer>
+
+<script>
+
+function toggleDark(){
+document.body.classList.toggle("dark")
+}
+
+function setLang(lang){
+
+document.querySelectorAll("[data-tr]").forEach(el=>{
+
+el.innerText = el.dataset[lang]
+
+})
+
+}
+
+</script>
+
 </body>
 </html>
