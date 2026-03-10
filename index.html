@@ -192,7 +192,6 @@ opacity:0.6;
 <button onclick="setLang('en')">EN</button>
 </div>
 
-
 <header class="hero">
 
 <div class="hero-text">
@@ -245,13 +244,12 @@ CV İndir
 
 </div>
 
-<img src="profil.jpg" class="hero-img">
+<!-- Profil fotoğrafı hero bölümüne -->
+<img src="profil.jpg" class="hero-img" alt="Profil Fotoğrafı">
 
 </header>
 
-
 <div class="container">
-
 
 <section>
 
@@ -266,7 +264,6 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 </p>
 
 </section>
-
 
 <section id="projects">
 
@@ -294,7 +291,6 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 
 </div>
 
-
 <div class="card">
 
 <h3>PID Kontrol Sistemi</h3>
@@ -319,52 +315,59 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 
 </section>
 
-
 <section>
 
 <h2 data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</h2>
 
 <div class="grid">
 
+<!-- Önceki sertifikalar -->
 <div class="card certificate">
-
-<img src="sertifikalar/bilgi_guvenligi.jpg">
-
+<img src="sertifikalar/bilgi_guvenligi.jpg" alt="Bilgi Güvenliği Sertifikası">
 <h3>Bilgi Güvenliği</h3>
-
-<a href="sertifikalar/bilgi_guvenligi.pdf" target="_blank" class="button">
-PDF Aç
-</a>
-
+<a href="sertifikalar/bilgi_guvenligi.pdf" target="_blank" class="button">PDF Aç</a>
 </div>
-
 
 <div class="card certificate">
-
-<img src="sertifikalar/isg.jpg">
-
+<img src="sertifikalar/isg.jpg" alt="İş Sağlığı ve Güvenliği Sertifikası">
 <h3>İş Sağlığı ve Güvenliği</h3>
+<a href="sertifikalar/isg.pdf" target="_blank" class="button">PDF Aç</a>
+</div>
 
-<a href="sertifikalar/isg.pdf" target="_blank" class="button">
-PDF Aç
-</a>
+<!-- Yeni sertifikalar -->
 
+<div class="card certificate">
+<img src="sertifikalar/roketsan.jpg" alt="Roketsan Stajyer Gelişim Sertifikası">
+<h3>Roketsan Stajyer Gelişim</h3>
+<a href="sertifikalar/RoketsanStajyerGelisim.pdf" target="_blank" class="button">PDF Aç</a>
+</div>
+
+<div class="card certificate">
+<img src="sertifikalar/programlama.jpg" alt="Programlama Algoritma Sertifikası">
+<h3>Programlama & Algoritma (Console Programming)</h3>
+<a href="sertifikalar/Programlama_Algoritma_Console_Programming.pdf" target="_blank" class="button">PDF Aç</a>
+</div>
+
+<div class="card certificate">
+<img src="sertifikalar/javascript.jpg" alt="JavaScript Sertifikası">
+<h3>JavaScript</h3>
+<a href="sertifikalar/JavaScript.pdf" target="_blank" class="button">PDF Aç</a>
+</div>
+
+<div class="card certificate">
+<img src="sertifikalar/softskills.jpg" alt="Soft Skills Sertifikası">
+<h3>Soft Skills</h3>
+<a href="sertifikalar/SoftSkills.pdf" target="_blank" class="button">PDF Aç</a>
 </div>
 
 </div>
-
 </section>
 
-
 </div>
 
-
 <footer>
-
 © 2025 Hüseyin Özsu
-
 </footer>
-
 
 <script>
 
@@ -373,11 +376,9 @@ document.body.classList.toggle("dark")
 }
 
 function setLang(lang){
-
 document.querySelectorAll("[data-tr]").forEach(el=>{
-el.innerText = el.dataset[lang]
+  el.innerText = el.dataset[lang]
 })
-
 }
 
 </script>
