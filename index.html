@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,24 +32,71 @@ color:var(--text);
 transition:0.3s;
 }
 
-header{
+.controls{
+position:fixed;
+top:15px;
+right:20px;
+z-index:100;
+}
+
+.controls button{
+margin-left:8px;
+padding:6px 10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+padding:120px 20px;
+flex-wrap:wrap;
 text-align:center;
-padding:60px 20px;
 }
 
-.profile{
-width:140px;
-border-radius:50%;
-margin-bottom:15px;
+.hero-text{
+max-width:500px;
 }
 
-h1{
-margin:10px 0;
-font-size:34px;
+.hero h1{
+font-size:48px;
+margin:0;
 }
 
-.subtitle{
+.hero-subtitle{
+font-size:20px;
 opacity:0.7;
+margin:20px 0;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+background:var(--accent);
+color:white;
+padding:12px 22px;
+border-radius:10px;
+}
+
+.hero-btn-outline{
+border:2px solid var(--accent);
+padding:12px 22px;
+border-radius:10px;
+color:var(--accent);
+}
+
+.hero-img{
+width:220px;
+border-radius:50%;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
 }
 
 .container{
@@ -58,19 +106,19 @@ padding:20px;
 }
 
 section{
-margin:50px 0;
+margin:70px 0;
 }
 
 h2{
 border-bottom:2px solid var(--accent);
 padding-bottom:6px;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 }
 
 .card{
@@ -85,13 +133,25 @@ transition:0.25s;
 transform:translateY(-5px);
 }
 
-a{
-text-decoration:none;
-color:var(--accent);
+.project-links{
+margin-top:12px;
+display:flex;
+gap:18px;
+}
+
+.project-links a{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.fa-youtube{
+color:red;
 }
 
 .social{
-margin-top:15px;
+text-align:center;
+margin-top:25px;
 }
 
 .social a{
@@ -104,29 +164,21 @@ color:var(--text);
 display:inline-block;
 background:var(--accent);
 color:white;
-padding:10px 18px;
+padding:8px 16px;
 border-radius:8px;
 margin-top:10px;
 }
 
-.controls{
-position:fixed;
-top:15px;
-right:20px;
-}
-
-.controls button{
-margin-left:10px;
-padding:6px 10px;
-border:none;
-border-radius:6px;
-cursor:pointer;
+.certificate img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
 }
 
 footer{
 text-align:center;
-padding:30px;
-opacity:0.7;
+padding:40px;
+opacity:0.6;
 }
 
 </style>
@@ -140,20 +192,44 @@ opacity:0.7;
 <button onclick="setLang('en')">EN</button>
 </div>
 
-<header>
 
-<img src="profil.jpg" class="profile">
+<header class="hero">
+
+<div class="hero-text">
 
 <h1>Hüseyin Özsu</h1>
 
-<p class="subtitle" data-tr="Marmara Üniversitesi | Mekatronik Mühendisliği"
-data-en="Marmara University | Mechatronics Engineering">
-Marmara Üniversitesi | Mekatronik Mühendisliği
+<p class="hero-subtitle"
+data-tr="Mekatronik Mühendisliği Öğrencisi | Otonom Sistemler"
+data-en="Mechatronics Engineering Student | Autonomous Systems">
+
+Mekatronik Mühendisliği Öğrencisi | Otonom Sistemler
+
 </p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="hero-btn"
+data-tr="Projeleri Gör"
+data-en="View Projects">
+
+Projeleri Gör
+
+</a>
+
+<a href="cv.pdf" class="hero-btn-outline"
+data-tr="CV İndir"
+data-en="Download CV">
+
+CV İndir
+
+</a>
+
+</div>
 
 <div class="social">
 
-<a href="https://github.com/" target="_blank">
+<a href="https://github.com/kullaniciadi" target="_blank">
 <i class="fab fa-github"></i>
 </a>
 
@@ -167,17 +243,22 @@ Marmara Üniversitesi | Mekatronik Mühendisliği
 
 </div>
 
-<a href="cv.pdf" class="button" download data-tr="CV İndir" data-en="Download CV">CV İndir</a>
+</div>
+
+<img src="profil.jpg" class="hero-img">
 
 </header>
 
+
 <div class="container">
+
 
 <section>
 
 <h2 data-tr="Hakkımda" data-en="About Me">Hakkımda</h2>
 
-<p data-tr="Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan bir mühendislik öğrencisiyim."
+<p
+data-tr="Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan bir mühendislik öğrencisiyim."
 data-en="Engineering student working on autonomous systems, control theory and software development.">
 
 Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan bir mühendislik öğrencisiyim.
@@ -187,22 +268,51 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 </section>
 
 
-<section>
+<section id="projects">
 
 <h2 data-tr="Projeler" data-en="Projects">Projeler</h2>
 
 <div class="grid">
 
 <div class="card">
+
 <h3>Otonom Araç Simülasyonu</h3>
+
 <p>ROS tabanlı otonom sürüş projesi.</p>
-<a href="#">GitHub</a>
+
+<div class="project-links">
+
+<a href="https://github.com/kullaniciadi/proje" target="_blank">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+<a href="https://youtube.com/video" target="_blank">
+<i class="fab fa-youtube"></i> YouTube
+</a>
+
 </div>
 
+</div>
+
+
 <div class="card">
+
 <h3>PID Kontrol Sistemi</h3>
-<p>Matlab ile kontrol sistemi tasarımı.</p>
-<a href="#">GitHub</a>
+
+<p>MATLAB ile PID kontrol sistemi tasarımı.</p>
+
+<div class="project-links">
+
+<a href="https://github.com/kullaniciadi/proje2" target="_blank">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+<a href="https://youtube.com/video2" target="_blank">
+<i class="fab fa-youtube"></i> YouTube
+</a>
+
+</div>
+
 </div>
 
 </div>
@@ -216,23 +326,28 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 
 <div class="grid">
 
-<div class="card">
+<div class="card certificate">
+
+<img src="sertifikalar/bilgi_guvenligi.jpg">
+
 <h3>Bilgi Güvenliği</h3>
 
-<embed src="sertifikalar/bilgi_guvenligi.pdf"
-type="application/pdf"
-width="100%"
-height="200px">
+<a href="sertifikalar/bilgi_guvenligi.pdf" target="_blank" class="button">
+PDF Aç
+</a>
 
 </div>
 
-<div class="card">
+
+<div class="card certificate">
+
+<img src="sertifikalar/isg.jpg">
+
 <h3>İş Sağlığı ve Güvenliği</h3>
 
-<embed src="sertifikalar/isg.pdf"
-type="application/pdf"
-width="100%"
-height="200px">
+<a href="sertifikalar/isg.pdf" target="_blank" class="button">
+PDF Aç
+</a>
 
 </div>
 
@@ -240,13 +355,16 @@ height="200px">
 
 </section>
 
+
 </div>
+
 
 <footer>
 
 © 2025 Hüseyin Özsu
 
 </footer>
+
 
 <script>
 
@@ -257,9 +375,7 @@ document.body.classList.toggle("dark")
 function setLang(lang){
 
 document.querySelectorAll("[data-tr]").forEach(el=>{
-
 el.innerText = el.dataset[lang]
-
 })
 
 }
