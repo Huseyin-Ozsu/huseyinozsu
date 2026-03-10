@@ -173,12 +173,22 @@ border-radius:8px;
 margin-top:10px;
 }
 
-.certificate img{
+.certificate-img-wrapper{
 width:100%;
-height:180px; /* sabit yükseklik */
-object-fit:cover; /* kırpma ile tam sığdır */
-border-radius:10px;
+height:180px; /* sabit kapsayıcı yüksekliği */
 margin-bottom:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f0f0f0;
+border-radius:10px;
+overflow:hidden;
+}
+
+.certificate-img-wrapper img{
+max-width:100%;
+max-height:100%;
+object-fit:contain; /* kesmeden sığdır */
 }
 
 footer{
@@ -328,42 +338,54 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 
 <!-- Bilgi Güvenliği -->
 <div class="card certificate">
+<div class="certificate-img-wrapper">
 <img src="İconlar/bilgi_guvenligi.jpg" alt="Bilgi Güvenliği Sertifikası">
+</div>
 <h3 data-tr="Bilgi Güvenliği" data-en="Information Security">Bilgi Güvenliği</h3>
 <a href="sertifikalar/bilgi_guvenligi.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
 </div>
 
 <!-- İş Sağlığı ve Güvenliği -->
 <div class="card certificate">
+<div class="certificate-img-wrapper">
 <img src="İconlar/isg.jpg" alt="İş Sağlığı ve Güvenliği Sertifikası">
+</div>
 <h3 data-tr="İş Sağlığı ve Güvenliği" data-en="Occupational Health & Safety">İş Sağlığı ve Güvenliği</h3>
 <a href="sertifikalar/isg.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
 </div>
 
 <!-- Roketsan -->
 <div class="card certificate">
+<div class="certificate-img-wrapper">
 <img src="İconlar/roketsan.png" alt="Roketsan Stajyer Gelişim Sertifikası">
+</div>
 <h3 data-tr="Roketsan Stajyer Gelişim" data-en="Roketsan Intern Development">Roketsan Stajyer Gelişim</h3>
 <a href="sertifikalar/RoketsanStajyerGelisim.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
 </div>
 
 <!-- Programlama & Algoritma -->
 <div class="card certificate">
+<div class="certificate-img-wrapper">
 <img src="İconlar/consoleprogramming.png" alt="Programlama Algoritma Sertifikası">
+</div>
 <h3 data-tr="Programlama & Algoritma (Console Programming)" data-en="Programming & Algorithm (Console Programming)">Programlama & Algoritma (Console Programming)</h3>
 <a href="sertifikalar/Programlama_Algoritma_Console_Programming.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
 </div>
 
 <!-- JavaScript -->
 <div class="card certificate">
+<div class="certificate-img-wrapper">
 <img src="İconlar/javascript.png" alt="JavaScript Sertifikası">
+</div>
 <h3 data-tr="JavaScript" data-en="JavaScript">JavaScript</h3>
 <a href="sertifikalar/JavaScript.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
 </div>
 
 <!-- Soft Skills -->
 <div class="card certificate">
+<div class="certificate-img-wrapper">
 <img src="İconlar/softskills.png" alt="Soft Skills Sertifikası">
+</div>
 <h3 data-tr="Soft Skills" data-en="Soft Skills">Soft Skills</h3>
 <a href="sertifikalar/SoftSkills.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
 </div>
