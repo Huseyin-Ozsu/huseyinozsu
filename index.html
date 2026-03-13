@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 :root{
 --bg:#f5f5f7;
 --text:#1d1d1f;
@@ -31,29 +32,61 @@ color:var(--text);
 transition:0.3s;
 }
 
-.controls{
+/* NAVBAR */
+
+.navbar{
 position:fixed;
-top:15px;
-right:20px;
-z-index:100;
+top:0;
+width:100%;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+background:var(--card);
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
 }
 
-.controls button{
-margin-left:8px;
+.nav-left button{
+margin-right:8px;
 padding:6px 10px;
 border:none;
 border-radius:6px;
 cursor:pointer;
 }
 
+.nav-logo{
+font-weight:600;
+font-size:18px;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+}
+
+.nav-links a:hover{
+color:var(--accent);
+}
+
+/* HERO */
+
 .hero{
 display:flex;
 align-items:center;
 justify-content:center;
 gap:80px;
-padding:120px 20px;
+padding:140px 20px;
 flex-wrap:wrap;
 text-align:center;
+margin-top:60px;
 }
 
 .hero-text{
@@ -142,12 +175,6 @@ display:flex;
 gap:18px;
 }
 
-.project-links a{
-display:flex;
-align-items:center;
-gap:6px;
-}
-
 .fa-youtube{
 color:red;
 }
@@ -195,18 +222,35 @@ text-align:center;
 padding:40px;
 opacity:0.6;
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="controls">
+<header class="navbar">
+
+<div class="nav-left">
 <button onclick="toggleDark()">🌙</button>
 <button onclick="setLang('tr')">TR</button>
 <button onclick="setLang('en')">EN</button>
 </div>
 
-<header class="hero">
+<div class="nav-logo">
+Hüseyin Özsu
+</div>
+
+<nav class="nav-links">
+<a href="#home">Ana Sayfa</a>
+<a href="#about">Hakkında</a>
+<a href="#projects">Projeler</a>
+<a href="#certificates">Sertifikalar</a>
+<a href="#contact">İletişim</a>
+</nav>
+
+</header>
+
+<header class="hero" id="home">
 
 <div class="hero-text">
 
@@ -252,13 +296,13 @@ CV İndir
 
 </div>
 
-<img src="profil.jpg" class="hero-img" alt="Profil Fotoğrafı">
+<img src="profil.jpg" class="hero-img">
 
 </header>
 
 <div class="container">
 
-<section>
+<section id="about">
 
 <h2 data-tr="Hakkımda" data-en="About Me">Hakkımda</h2>
 
@@ -277,89 +321,61 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 <div class="grid">
 
 <div class="card">
-<h3 data-tr="Otonom Araç Simülasyonu" data-en="Autonomous Vehicle Simulation">Otonom Araç Simülasyonu</h3>
-<p data-tr="ROS tabanlı otonom sürüş projesi." data-en="ROS-based autonomous driving project.">ROS tabanlı otonom sürüş projesi.</p>
+<h3>Otonom Araç Simülasyonu</h3>
+<p>ROS tabanlı otonom sürüş projesi.</p>
+
 <div class="project-links">
-<a href="https://github.com/kullaniciadi/proje" target="_blank">
-<i class="fab fa-github"></i> GitHub
-</a>
-<a href="https://youtube.com/video" target="_blank">
-<i class="fab fa-youtube"></i> YouTube
-</a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
 </div>
+
 </div>
 
 <div class="card">
-<h3 data-tr="PID Kontrol Sistemi" data-en="PID Control System">PID Kontrol Sistemi</h3>
-<p data-tr="MATLAB ile PID kontrol sistemi tasarımı." data-en="PID control system design using MATLAB.">MATLAB ile PID kontrol sistemi tasarımı.</p>
+<h3>PID Kontrol Sistemi</h3>
+<p>MATLAB ile PID kontrol sistemi tasarımı.</p>
+
 <div class="project-links">
-<a href="https://github.com/kullaniciadi/proje2" target="_blank">
-<i class="fab fa-github"></i> GitHub
-</a>
-<a href="https://youtube.com/video2" target="_blank">
-<i class="fab fa-youtube"></i> YouTube
-</a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
 </div>
+
 </div>
 
 </div>
 </section>
 
-<section>
+<section id="certificates">
 
 <h2 data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</h2>
 
 <div class="grid">
 
-<div class="card certificate">
+<div class="card">
 <div class="certificate-img-wrapper">
-<img src="İconlar/bilgi_guvenligi.jpg" alt="Bilgi Güvenliği Sertifikası">
+<img src="iconlar/bilgi_guvenligi.jpg">
 </div>
-<h3 data-tr="Bilgi Güvenliği" data-en="Information Security">Bilgi Güvenliği</h3>
-<a href="sertifikalar/bilgi_guvenligi.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
+<h3>Bilgi Güvenliği</h3>
+<a href="sertifikalar/bilgi_guvenligi.pdf" target="_blank" class="button">PDF Aç</a>
 </div>
 
-<div class="card certificate">
+<div class="card">
 <div class="certificate-img-wrapper">
-<img src="İconlar/isg.jpg" alt="İş Sağlığı ve Güvenliği Sertifikası">
+<img src="iconlar/isg.jpg">
 </div>
-<h3 data-tr="İş Sağlığı ve Güvenliği" data-en="Occupational Health & Safety">İş Sağlığı ve Güvenliği</h3>
-<a href="sertifikalar/isg.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
-</div>
-
-<div class="card certificate">
-<div class="certificate-img-wrapper">
-<img src="İconlar/roketsan.png" alt="Roketsan Stajyer Gelişim Sertifikası">
-</div>
-<h3 data-tr="Roketsan Stajyer Gelişim" data-en="Roketsan Intern Development">Roketsan Stajyer Gelişim</h3>
-<a href="sertifikalar/RoketsanStajyerGelisim.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
-</div>
-
-<div class="card certificate">
-<div class="certificate-img-wrapper">
-<img src="İconlar/consoleprogramming.png" alt="Programlama Algoritma Sertifikası">
-</div>
-<h3 data-tr="Programlama & Algoritma (Console Programming)" data-en="Programming & Algorithm (Console Programming)">Programlama & Algoritma (Console Programming)</h3>
-<a href="sertifikalar/Programlama_Algoritma_Console_Programming.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
-</div>
-
-<div class="card certificate">
-<div class="certificate-img-wrapper">
-<img src="İconlar/javascript.png" alt="JavaScript Sertifikası">
-</div>
-<h3 data-tr="JavaScript" data-en="JavaScript">JavaScript</h3>
-<a href="sertifikalar/JavaScript.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
-</div>
-
-<div class="card certificate">
-<div class="certificate-img-wrapper">
-<img src="İconlar/softskills.png" alt="Soft Skills Sertifikası">
-</div>
-<h3 data-tr="Soft Skills" data-en="Soft Skills">Soft Skills</h3>
-<a href="sertifikalar/SoftSkills.pdf" target="_blank" class="button" data-tr="PDF Aç" data-en="Open PDF">PDF Aç</a>
+<h3>İş Sağlığı ve Güvenliği</h3>
+<a href="sertifikalar/isg.pdf" target="_blank" class="button">PDF Aç</a>
 </div>
 
 </div>
+</section>
+
+<section id="contact">
+
+<h2 data-tr="İletişim" data-en="Contact">İletişim</h2>
+
+<p>Email: h.ozsuhuseyin@gmail.com</p>
+
 </section>
 
 </div>
@@ -369,15 +385,17 @@ Otonom sistemler, kontrol teorisi ve yazılım geliştirme üzerine çalışan b
 </footer>
 
 <script>
+
 function toggleDark(){
 document.body.classList.toggle("dark")
 }
 
 function setLang(lang){
 document.querySelectorAll("[data-tr]").forEach(el=>{
-  el.innerText = el.dataset[lang]
+el.innerText = el.dataset[lang]
 })
 }
+
 </script>
 
 </body>
